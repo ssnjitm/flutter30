@@ -1,5 +1,21 @@
+import 'package:flutter/material.dart';
+
+class CatalogModel{
+  static final items = [
+  Item(
+    id: 1,
+    name: "product1",
+    desc: "Description of Product 1",
+    price: 20,
+    color: "blue",
+    image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQox20ZDLF0jzrZbLo63anu84DTH-r_oGojKLxezeRu3w&s",
+  ),
+];
+
+}
 class Item {
-  final String id;
+  final num id;
   final String name;
   final String desc;
   final num price;
@@ -15,14 +31,4 @@ class Item {
       required this.image});
 }
 
-final products = [
-  Item(
-    id: '1',
-    name: "product1",
-    desc: "Description of Product 1",
-    price: 20,
-    color: "blue",
-    image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQox20ZDLF0jzrZbLo63anu84DTH-r_oGojKLxezeRu3w&s",
-  ),
-];
+
