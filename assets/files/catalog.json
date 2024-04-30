@@ -1,0 +1,83 @@
+[{
+    "products": [{
+            "id ": 1,
+            "name": "product1",
+            "desc": "Description of Product 1",
+            "price": 20,
+            "color": "blue",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQox20ZDLF0jzrZbLo63anu84DTH-r_oGojKLxezeRu3w&s"
+        },
+        {
+            "id": 2,
+            "name": "product2",
+            "desc": "Description of Product 2",
+            "price": 30,
+            "color": "red",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNEHHI2-lIYsAIvgH0dBGRFNd_dG1OZf-syA&s"
+        },
+        {
+            "id": 3,
+            "name": "product3",
+            "desc": "Description of Product 3",
+            "price": 25,
+            "color": "green",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDL-wSFAJAeL5s3gRuSkko4qxsXQk_S-ozWQ&s"
+        },
+        {
+            "id": 4,
+            "name": "product4",
+            "desc": "Description of Product 4",
+            "price": 40,
+            "color": "yellow",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQXJsFtjFfWFldbhVVE753SrvFQ6DX1Dw6Hw&s"
+        },
+        {
+            "id": 5,
+            "name": "product5",
+            "desc": "Description of Product 5",
+            "price": 50,
+            "color": "purple",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQXJsFtjFfWFldbhVVE753SrvFQ6DX1Dw6Hw&s"
+        },
+        {
+            "id": 6,
+            "name": "product6",
+            "desc": "Description of Product 6",
+            "price": 60,
+            "color": "orange",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQXJsFtjFfWFldbhVVE753SrvFQ6DX1Dw6Hw&s"
+        },
+        {
+            "id": 7,
+            "name": "product7",
+            "desc": "Description of Product 7",
+            "price": 70,
+            "color": "black",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQXJsFtjFfWFldbhVVE753SrvFQ6DX1Dw6Hw&s"
+        },
+        {
+            "id": 8,
+            "name": "product8",
+            "desc": "Description of Product 8",
+            "price": 80,
+            "color": "white",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQXJsFtjFfWFldbhVVE753SrvFQ6DX1Dw6Hw&s"
+        },
+        {
+            "id": 9,
+            "name": "product9",
+            "desc": "Description of Product 9",
+            "price": 90,
+            "color": "brown",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQXJsFtjFfWFldbhVVE753SrvFQ6DX1Dw6Hw&s"
+        },
+        {
+            "id": 10,
+            "name": "product10",
+            "desc": "Description of Product 10",
+            "price": 100,
+            "color": "gray",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQXJsFtjFfWFldbhVVE753SrvFQ6DX1Dw6Hw&s"
+        }
+    ]
+}]
