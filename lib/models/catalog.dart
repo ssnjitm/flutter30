@@ -2,7 +2,7 @@
 import 'dart:convert';
 
 class CatalogModel {
-  static List<Item> items;
+  static List<Item> items = [];
 }
 
 class Item {
@@ -13,7 +13,14 @@ class Item {
   final String color;
   final String image;
 
-  const Item(this.id, this.name, this.desc, this.price, this.color, this.image);
+  const Item(
+    this.id,
+    this.name,
+    this.desc,
+    this.price,
+    this.color,
+    this.image,
+  );
 
   Item copyWith({
     num? id,
