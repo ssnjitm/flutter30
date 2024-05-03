@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:codepurs/models/catalog.dart';
 import 'package:codepurs/widgets/drawer.dart';
-import 'package:codepurs/widgets/iteam_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -36,18 +35,52 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(title: Center(child: Text('Catalog App'))),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: CatalogModel.items.length,
-          itemBuilder: (context, index) {
-            return ItemWidget(
-              item: CatalogModel.items[index],
-            );
-
-            // Your code to build each item goes here
-          },
-        ),
-      ),
+          padding: const EdgeInsets.all(16.0),
+          child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+              ? GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 4,
+                    mainAxisSpacing: 16,
+                    crossAxisSpacing: 16,
+                  ),
+                  itemCount: CatalogModel.items.length,
+                  itemBuilder: (context, index) {
+                    final item = CatalogModel.items[index];
+                    return Card(
+                        clipBehavior: Clip.antiAlias,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        child: GridTile(
+                          header: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.deepPurple,
+                            ),
+                            child: Text(
+                              item.name,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            padding: const EdgeInsets.all(1),
+                          ),
+                          child: Image.network(
+                            item.image,
+                            fit: BoxFit.fill,
+                          ),
+                          footer: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                            ),
+                            child: Text(
+                              item.price.toString(),
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            padding: const EdgeInsets.all(1),
+                          ),
+                        ));
+                  },
+                )
+              : Center(
+                  child: CircularProgressIndicator(),
+                )),
       drawer: MyDrawer(),
     );
   }

@@ -1,96 +1,116 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:convert';
-
-class CatalogModel {
-  static List<Item> items = [];
-}
 
 class Item {
-  final num id;
+  final int id;
   final String name;
   final String desc;
-  final num price;
+  final double price;
   final String color;
   final String image;
 
-  const Item(
-    this.id,
-    this.name,
-    this.desc,
-    this.price,
-    this.color,
-    this.image,
-  );
+  Item({
+    required this.id,
+    required this.name,
+    required this.desc,
+    required this.price,
+    required this.color,
+    required this.image,
+  });
+}
 
-  Item copyWith({
-    num? id,
-    String? name,
-    String? desc,
-    num? price,
-    String? color,
-    String? image,
-  }) {
-    return Item(
-      id ?? this.id,
-      name ?? this.name,
-      desc ?? this.desc,
-      price ?? this.price,
-      color ?? this.color,
-      image ?? this.image,
-    );
-  }
+class CatalogModel {
+  static List<Item> items = [
+    Item(
+      id: 1,
+      name: "product1",
+      desc: "Description of Product 1",
+      price: 20,
+      color: "blue",
+      image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQox20ZDLF0jzrZbLo63anu84DTH-r_oGojKLxezeRu3w&s",
+    ),
+    Item(
+      id: 2,
+      name: "product2",
+      desc: "Description of Product 2",
+      price: 999,
+      color: "red",
+      image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNEHHI2-lIYsAIvgH0dBGRFNd_dG1OZf-syA&s",
+    ),
+    Item(
+      id: 3,
+      name: "product3",
+      desc: "Description of Product 3",
+      price: 999,
+      color: "green",
+      image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDL-wSFAJAeL5s3gRuSkko4qxsXQk_S-ozWQ&s",
+    ),
+    Item(
+      id: 5,
+      name: "product4",
+      desc: "Description of Product 4",
+      price: 1023,
+      color: "pink",
+      image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQXJsFtjFfWFldbhVVE753SrvFQ6DX1Dw6Hw&s",
+    ),
+    Item(
+      id: 4,
+      name: "product4",
+      desc: "Description of Product 4",
+      price: 1023,
+      color: "pink",
+      image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQXJsFtjFfWFldbhVVE753SrvFQ6DX1Dw6Hw&s",
+    ),
+    Item(
+      id: 4,
+      name: "product4",
+      desc: "Description of Product 4",
+      price: 1023,
+      color: "pink",
+      image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQXJsFtjFfWFldbhVVE753SrvFQ6DX1Dw6Hw&s",
+    ),
+    Item(
+      id: 4,
+      name: "product4",
+      desc: "Description of Product 4",
+      price: 1023,
+      color: "pink",
+      image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQXJsFtjFfWFldbhVVE753SrvFQ6DX1Dw6Hw&s",
+    ),
+    Item(
+      id: 4,
+      name: "product4",
+      desc: "Description of Product 4",
+      price: 1023,
+      color: "pink",
+      image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQXJsFtjFfWFldbhVVE753SrvFQ6DX1Dw6Hw&s",
+    ),
+    Item(
+      id: 4,
+      name: "product4",
+      desc: "Description of Product 4",
+      price: 1023,
+      color: "pink",
+      image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQXJsFtjFfWFldbhVVE753SrvFQ6DX1Dw6Hw&s",
+    ),
+    Item(
+      id: 4,
+      name: "product4",
+      desc: "Description of Product 4",
+      price: 1023,
+      color: "pink",
+      image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQXJsFtjFfWFldbhVVE753SrvFQ6DX1Dw6Hw&s",
+    ),
 
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'id': id,
-      'name': name,
-      'desc': desc,
-      'price': price,
-      'color': color,
-      'image': image,
-    };
-  }
-
-  factory Item.fromMap(Map<String, dynamic> map) {
-    return Item(
-      (map["id"] ?? 0) as num,
-      (map["name"] ?? '') as String,
-      (map["desc"] ?? '') as String,
-      (map["price"] ?? 0) as num,
-      (map["color"] ?? '') as String,
-      (map["image"] ?? '') as String,
-    );
-  }
-
-  String toJson() => json.encode(toMap());
-
-  factory Item.fromJson(String source) =>
-      Item.fromMap(json.decode(source) as Map<String, dynamic>);
-
-  @override
-  String toString() {
-    return 'Item(id: $id, name: $name, desc: $desc, price: $price, color: $color, image: $image)';
-  }
-
-  @override
-  bool operator ==(covariant Item other) {
-    if (identical(this, other)) return true;
-
-    return other.id == id &&
-        other.name == name &&
-        other.desc == desc &&
-        other.price == price &&
-        other.color == color &&
-        other.image == image;
-  }
-
-  @override
-  int get hashCode {
-    return id.hashCode ^
-        name.hashCode ^
-        desc.hashCode ^
-        price.hashCode ^
-        color.hashCode ^
-        image.hashCode;
-  }
+    // Add more items here as needed
+  ];
 }
