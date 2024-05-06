@@ -11,6 +11,9 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+        ),
         bottomNavigationBar: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: Vx.mH8, //buttonPadding: Vx.mOnly8;
@@ -19,7 +22,7 @@ class HomeDetailPage extends StatelessWidget {
             "\$${catalog.price}".text.bold.red400.xl4.make(),
             ElevatedButton(
               onPressed: () {},
-              child: "Buy".text.white.make(),
+              child: "Add To Cart".text.white.make(),
               style: ButtonStyle(
                 backgroundColor:
                     MaterialStateProperty.all(MyTheme.darkBluishColor),
@@ -51,6 +54,10 @@ class HomeDetailPage extends StatelessWidget {
                           .make(),
                       catalog.desc.text.color(MyTheme.darkBluishColor).make(),
                       5.heightBox,
+                      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+                          .text
+                          .textStyle(context.captionStyle)
+                          .make()
                     ],
                   ).py64(),
                 ),

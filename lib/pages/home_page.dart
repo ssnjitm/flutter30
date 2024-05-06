@@ -1,8 +1,11 @@
 import 'dart:convert';
 
 import 'package:codepurs/models/catalog.dart';
+import 'package:codepurs/utils/routes.dart';
 import 'package:codepurs/widgets/home_widgets/catalog_header.dart';
 import 'package:codepurs/widgets/home_widgets/catalog_list.dart';
+import 'package:codepurs/widgets/themes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -35,23 +38,32 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, MyRoutes.cartRoute);
+          },
+          child: Icon(
+            CupertinoIcons.cart,
+            color: Colors.white,
+          ),
+          backgroundColor: MyTheme.darkBluishColor,
+        ),
         //column wrapped with container and again wrapped with SafeArea
         body: SafeArea(
-      child: Container(
-        padding: Vx.m32,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CatalogHeader(),
-            if (CatalogModel.items != null)
-              CatalogList().expand()
-            // banaune ho aafai
-            else
-              CircularProgressIndicator().expand()
-          ],
-        ),
-      ),
-    ));
+          child: Container(
+            padding: Vx.m32,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CatalogHeader(),
+                if (CatalogModel.items != null)
+                  CatalogList().expand()
+                // banaune ho aafai
+                else
+                  CircularProgressIndicator().expand()
+              ],
+            ),
+          ),
+        ));
   }
 }
